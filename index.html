@@ -15,8 +15,8 @@
 <body>
 
   <div id="root" class="container">
-    <modal></modal>
-    <button>Show Modal</button>
+    <modal v-if="showModal" @close="showModal = false"></modal>
+    <button @click="showModal = true">Show Modal</button>
     <message title="Hello World" body="Lorem ipsum dolor sit amet"></message>
     <message title="Hello Galaxy" body="Lorem ipsum dolor sit amet"></message>
     <message title="Hello Universe" body="Lorem ipsum dolor sit amet"></message>

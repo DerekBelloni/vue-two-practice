@@ -12,7 +12,7 @@ Vue.component('modal', {
         hic cumque, excepturi perferendis laborum.</p>
     </div>
   </div>
-  <button class="modal-close is-large" aria-label="close"></button>
+  <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
 </div>
   `
 })
@@ -40,12 +40,17 @@ Vue.component('message', {
   methods: {
     hideCard() {
       this.isVisible = !this.isVisible
-    }
-  }
+    },
+  },
+
+
 })
 
 
 // @ts-ignore
 new Vue({
-  el: '#root'
+  el: '#root',
+  data: {
+    showModal: false
+  }
 });
