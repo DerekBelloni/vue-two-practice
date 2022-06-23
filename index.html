@@ -4,12 +4,22 @@
 <head>
   <title>
   </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+  <style type="text/css">
+    body {
+      padding-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <div id="root">
-    <task-list></task-list>
+  <div id="root" class="container">
+    <modal></modal>
+    <button>Show Modal</button>
+    <message title="Hello World" body="Lorem ipsum dolor sit amet"></message>
+    <message title="Hello Galaxy" body="Lorem ipsum dolor sit amet"></message>
+    <message title="Hello Universe" body="Lorem ipsum dolor sit amet"></message>
 
   </div>
   <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
