@@ -1,40 +1,26 @@
-// @ts-ignore
-Vue.component('tabs', {
-  template: `
-  <div>
-  <div class="tabs">
-    <ul>
-      <li v-for="tab in tabs">
-        <a href="#"> {{tab.name}}</a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="tabs-details">
-    <slot></slot>
-  </div>
-  </div>
-  `,
-
-  data() {
-    return { tabs: [] }
-  },
-  created() {
-    this.tabs = this.$children
-  }
-});
 
 // @ts-ignore
-Vue.component('tab', {
-  template: `
-    <div><slot></slot></div>
-  `,
-  props: {
-    name: { required: true },
-    selected: { default: false }
+Vue.component('coupon', {
+  template: '<input placeholder="Enter your coupon code" @blur="onCouponApplied"/>',
+
+  methods: {
+    onCouponApplied() {
+      this.$emit('applied')
+    }
   }
 })
+
 // @ts-ignore
 new Vue({
-  el: '#root'
-});
+  el: '#root',
+
+  data: {
+    couponApplied: false
+  },
+
+  methods: {
+    onAppleSauce() {
+      this.couponApplied = true;
+    }
+  }
+})
